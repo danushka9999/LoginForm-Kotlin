@@ -12,9 +12,9 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val email = findViewById(R.id.txt1) as EditText
-        val pass = findViewById(R.id.txt2) as EditText
-        val loginClick = findViewById(R.id.btnLogin) as Button
+        val email = findViewById<EditText>(R.id.txt1)
+        val pass = findViewById<EditText>(R.id.txt2)
+        val loginClick = findViewById<Button>(R.id.btnLogin)
         loginClick.setOnClickListener {
             val ema: String = email.text.toString()
             val pwd: String = pass.text.toString()
@@ -27,7 +27,7 @@ class Login : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Password field cannot be empty",
                     Toast.LENGTH_SHORT).show()
             }
-            if (ema.equals("abc@xyz.com")&&(pwd.equals("123456"))){
+            if (ema == "abc@xyz.com" &&(pwd == "123456")){
                 val intent = Intent(this, Home::class.java)
                 startActivity(intent)
             } else{
